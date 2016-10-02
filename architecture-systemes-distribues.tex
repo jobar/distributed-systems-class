@@ -1,0 +1,105 @@
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONFIGURATION
+%----------------------------------------------------------------------------------------
+
+\documentclass[utf8,12pt,draft]{article}
+\usepackage[a4paper, total={16cm, 26cm}]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{slantsc}
+\usepackage[official]{eurosym}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{cite}
+%\usepackage[backend=bibtex,style=verbose-trad2]{biblatex}
+
+
+
+%\definecolor{arsenic}{rgb}{0.23, 0.27, 0.29}
+
+%\setlength{\parindent}{4em}
+%\setlength{\parskip}{1em}
+
+%\renewcommand{\familydefault}{\sfdefault}
+%\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+\pagenumbering{gobble}
+
+\title{\LARGE\bfseries Intoduction \`a l'architecture des syst\`emes distribu\'es}
+\author{Joseph Allemandou}
+\date{Octobre 2016}
+\maketitle
+
+Ce cours a pour objectif de pr\'esenter de fa\c{c}on pragmatique les notions
+n\'ecessaires \`a la compr\'ehension des architectures de syst\`emes
+distribu\'es. Les exemples utilis\'es sont de complexit\'e croissante :
+\begin{itemize}
+\item Parall\'elisation d'un algorithme
+\item R\'esilience et distribution de charge d'un site web
+\item Stockage et calcul distribu\'e --- {\sc Hadoop}.
+\end{itemize}
+
+\section{Jour 1 --- Premi\`ere approche}
+
+\subsection{Calculer plus vite - Distribuer les traitements}
+\begin{itemize}
+\item Ex\'ecution parall\`ele \cite{wikipara} \cite{wikiconcur} \cite{wikimultitache}
+\item Threads \& Processus\cite{wikithread} \cite{wikiproc}
+\item Synchronisation \cite{wikisync} \cite{wikideadlock}
+\item Appronfondissment \cite{wikiordo} \cite{wikicomproc} \cite{wikiverrou}
+                        \cite{wikisema} \cite{wikiexclu} \cite{wikisection}
+                        \cite{wikiprodcons} \cite{wikilectred}
+\end{itemize}
+
+
+\subsection{La r\'esilience --- L'autre b\'en\'efice}
+\begin{itemize}
+\item Architecture distribu\'ee \cite{wikiarchidist} --- L'exemple d'un site web
+\item B\'en\'efices apport\'es par la r\'eplication \cite{wikirepli} \cite{wikispof} \cite{wikiloadbal}
+\item Mod\`eles de r\'eplication \cite{wikimasterslave} \cite{wikimultimaster}
+\item Approfondissement \cite{wikicap} \cite{wikiconsensus} \cite{wikipaxos}
+                        \cite{wikisplitbrain} \cite{wikiillus}
+\end{itemize}
+
+
+
+\section{Jour 2 --- {\sc Hadoop}}
+
+\subsection{Architecture d'un syst\`eme de stockage}
+\begin{itemize}
+\item R\'eplication des donn\'ees (fiabilit\'e, tol\'erance aux pannes, disponibilit\'e)
+\item Repr\'esentation de la donn\'ee (blocks)
+\item Briques logicielles n\'ecessaires (namenode, datanode)
+\item Lecture / \'ecriture sur un syst\`eme distribu\'e (description des
+      interactions entre briques logicielles lors de la lecture ou l'\'ecriture)
+\end{itemize}
+
+
+\subsection{Architecture d'un syst\`eme de calcul}
+\begin{itemize}
+\item Localit\'e des donn\'ees (d\'eplacement du code plutôt que des données)
+\item Probl\`emes associ\'es \`a la parall\'elisation du calcul
+\item Paradigme map-reduce
+\item Briques logicielles n\'ecessaires (resource manager, application master, worker)
+\item Probl\`emes sous-jacents \`a map-reduce (shuffle, RAM limits, sort)
+\end{itemize}
+
+
+\section{Jour 3 --- Big Data \& \'Evaluation}
+
+\section{Vous avez dit {\sc Big Data} \cite{wikibigdata} ?}
+En vrac
+\begin{itemize}
+\item Blah
+\end{itemize}
+
+%\printbibliography
+\bibliographystyle{unsrt}
+\bibliography{biblio}
+
+\end{document}
