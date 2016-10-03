@@ -26,6 +26,8 @@
 
 %\renewcommand{\familydefault}{\sfdefault}
 %\renewcommand{\familydefault}{\sfdefault}
+\addto\captionsfrench{\renewcommand{\refname}{R\'ef\'erences Wikip\'edia}}
+\renewcommand\refname{R\'ef\'erences Wikip\'edia}
 
 \begin{document}
 \pagenumbering{gobble}
@@ -63,40 +65,50 @@ distribu\'es. Les exemples utilis\'es sont de complexit\'e croissante :
 \item B\'en\'efices apport\'es par la r\'eplication \cite{wikirepli} \cite{wikispof} \cite{wikiloadbal}
 \item Mod\`eles de r\'eplication \cite{wikimasterslave} \cite{wikimultimaster}
 \item Approfondissement \cite{wikicap} \cite{wikiconsensus} \cite{wikipaxos}
-                        \cite{wikisplitbrain} \cite{wikiillus}
+                        \cite{wikisplitbrain}
 \end{itemize}
 
 
+\section{Jour 2 --- {\sc Hadoop} \cite{wikihadoop}}
 
-\section{Jour 2 --- {\sc Hadoop}}
-
-\subsection{Architecture d'un syst\`eme de stockage}
+\subsection{G\'en\'eralit\'es et histoire}
 \begin{itemize}
-\item R\'eplication des donn\'ees (fiabilit\'e, tol\'erance aux pannes, disponibilit\'e)
-\item Repr\'esentation de la donn\'ee (blocks)
+\item Passage \`a l'\'echelle \cite{wikiscala} \cite{wikigrille} \cite{wikicalcdist}
+\item L'approche historique \cite{wikisuperordi} \cite{wikiomp}
+\item La révolution par le web \cite{wikigrappe} \cite{wikicluster}
+\item \`A garder en mémoire \cite{wikiillus}
+\end{itemize}
+
+\subsection{Architecture du syst\`eme de stockage {\sc HDFS}}
+\begin{itemize}
+\item Fonctionnement
 \item Briques logicielles n\'ecessaires (namenode, datanode)
-\item Lecture / \'ecriture sur un syst\`eme distribu\'e (description des
-      interactions entre briques logicielles lors de la lecture ou l'\'ecriture)
 \end{itemize}
 
 
-\subsection{Architecture d'un syst\`eme de calcul}
+\subsection{Architecture du syst\`eme de gestion de ressources {\sc YARN}}
 \begin{itemize}
-\item Localit\'e des donn\'ees (d\'eplacement du code plutôt que des données)
-\item Probl\`emes associ\'es \`a la parall\'elisation du calcul
-\item Paradigme map-reduce
+\item Fonctionnement
 \item Briques logicielles n\'ecessaires (resource manager, application master, worker)
-\item Probl\`emes sous-jacents \`a map-reduce (shuffle, RAM limits, sort)
 \end{itemize}
+
+\subsection{Paradigme de calcul {\sc MapReduce} \cite{wikimapred}}
+\begin{itemize}
+\item Fonctionnement
+\item Points forts et points faibles
+\end{itemize}
+
+\subsection{\'Ecosyst\`eme}
+{\sc Hive}\cite{wikihive}, {\sc Pig}\cite{wikipig}, {\sc HBase}\cite{wikihbase},
+{\sc Spark}\cite{wikispark}
 
 
 \section{Jour 3 --- Big Data \& \'Evaluation}
 
 \section{Vous avez dit {\sc Big Data} \cite{wikibigdata} ?}
-En vrac
-\begin{itemize}
-\item Blah
-\end{itemize}
+En vrac ... NoSQL\cite{wikinosql}, entrp\^ots de données \cite{wikientrepot}
+\cite{wikidatamart}, travail de la donnée \cite{wikiinfodeci} \cite{wikiexplodonnees}
+\cite{wikiai} \cite{wikidatasci}
 
 %\printbibliography
 \bibliographystyle{unsrt}
