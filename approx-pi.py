@@ -50,7 +50,8 @@ def printPiPar(pow10, numProc):
 
 for pow10 in range(1, 9):
     printPi(pow10)
+    printPiPar(pow10, 1)
     printPiPar(pow10, 2)
-    printPiPar(pow10, 4)
+    #printPiPar(pow10, 4)
     for i in range(0, 2):
         print('*' * 60)
