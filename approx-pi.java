@@ -1,27 +1,48 @@
-/**
- * Created by pascalluttgens on 04/10/16.
- */
-public class Pi implements Runnable {
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
-    private final int itv;
-    private final int nDivs;
-    private final int begin;
-    private int result = 0;
-    private boolean done = false;
+public class Main {
 
-    public Pi(int itv, int nDivs, int begin) {
-        this.nDivs = nDivs;
-        this.begin = begin;
-        this.itv = itv;
+    private static class Partition {
+        public double begin;
+        public double end;
+        public double itv;
+
+        public Partition(double itv, double begin, double end) {
+            this.begin = begin;
+            this.end = end;
+            this.itv = itv;
+        }
     }
 
-    @Override
-    public void run() {
-        for (int i = begin; i < this.nDivs; ++i)
-            result += 1/nDivs*(Math.sqrt(1-(Math.pow(i/nDivs, 2))));
-        this.done = true;
-    }
+    public static void main(String[] args) {
+        List<Partition> partitions = new ArrayList<>();
+        double nDivs = 1000000000;
+        double nParts = 100;
 
-    public boolean isDone() { return this.done; }
+        long start = System.currentTimeMillis();
+
+        for (int i = 0; i < nParts; ++i) {
+            partitions.add(new Partition(nDivs, i * (nDivs/nParts) + 1, i * (nDivs/nParts) + (nDivs/nParts)));
+        }
+
+
+        double pi = partitions
+                .parallelStream()
+                .mapToDouble(p -> {
+                    double result = 0.0;
+                    for (double i = p.begin; i <= p.end; ++i)
+                        result += 1.0/p.itv*(Math.sqrt(1.0-(Math.pow(i/p.itv, 2))));
+                    return result;
+                })
+                .reduce((d, d2) -> d + d2)
+                .getAsDouble() * 4;
+
+        long end = System.currentTimeMillis();
+
+        System.out.println(pi);
+        System.out.println(end - start);
+    }
 
 }
